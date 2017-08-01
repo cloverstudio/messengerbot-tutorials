@@ -101,7 +101,7 @@ WebHookController.prototype.receivedMessage = function(event){
     }
 };
 
-WebHookController.prototype.sendTextMessage = function(senderId){
+WebHookController.prototype.sendTextMessage = function(recipientId){
     var messageData = {
         recipient: {
             id: recipientId
