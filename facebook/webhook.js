@@ -23,7 +23,7 @@ WebHookController.prototype.init = function(app){
 
         var data = req.body;
 
-        console.log("data received",data);
+        console.log("receive post",JSON.stringify(myObject, null, 3));
 
         // Make sure this is a page subscription
         if (data.object === 'page') {
