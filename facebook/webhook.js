@@ -33,16 +33,20 @@ WebHookController.prototype.init = function(app){
                 var pageID = entry.id;
                 var timeOfEvent = entry.time;
 
-                // Iterate over each messaging event
-                entry.messaging.forEach(function(event) {
+                if(entry.messaging){
 
-                    if (event.message) {
-                        receivedMessage(event);
-                    } else {
-                        console.log("Webhook received unknown event: ", event);
-                    }
+                    // Iterate over each messaging event
+                    entry.messaging.forEach(function(event) {
 
-                });
+                        if (event.message) {
+                            receivedMessage(event);
+                        } else {
+                            console.log("Webhook received unknown event: ", event);
+                        }
+
+                    });
+
+                }
             
             });
 
