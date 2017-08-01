@@ -39,7 +39,7 @@ WebHookController.prototype.init = function(app){
                     entry.messaging.forEach(function(event) {
 
                         if (event.message) {
-                            receivedMessage(event);
+                            //receivedMessage(event);
                         } else {
                             console.log("Webhook received unknown event: ", event);
                         }
