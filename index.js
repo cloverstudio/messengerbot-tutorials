@@ -1,8 +1,9 @@
 var express = require('express');
+var bodyParser = require("body-parser");
 var router = express.Router();
 
 const app = express();
-app.use(express.bodyParser());
+app.use(bodyParser.json());
 
 const FacebookWebHookController = require('./facebook/webhook');
 
