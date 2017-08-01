@@ -8,6 +8,8 @@ var WebHookController = function(){
 
 WebHookController.prototype.init = function(app){
 
+    var self = this;
+
     router.get('/webhook', function(req, res) {
         if (req.query['hub.mode'] === 'subscribe' &&
             req.query['hub.verify_token'] === init.facebookVerifyToken) {
@@ -39,7 +41,7 @@ WebHookController.prototype.init = function(app){
                     entry.messaging.forEach(function(event) {
 
                         if (event.message) {
-                            //receivedMessage(event);
+                            self.receivedMessage(event);
                         } else {
                             console.log("Webhook received unknown event: ", event);
                         }
@@ -63,6 +65,76 @@ WebHookController.prototype.init = function(app){
 
     return router;
 
+};
+
+WebHookController.prototype.receivedMessage = function(event){
+
+    var self = this;
+
+    var senderID = event.sender.id;
+    var recipientID = event.recipient.id;
+    var timeOfMessage = event.timestamp;
+    var message = event.message;
+
+    console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
+    console.log(JSON.stringify(message));
+
+    var messageId = message.mid;
+
+    var messageText = message.text;
+    var messageAttachments = message.attachments;
+
+    if (messageText) {
+
+    // If we receive a text message, check to see if it matches a keyword
+    // and send back the example. Otherwise, just echo the text we received.
+    switch (messageText) {
+        case 'generic':
+            self.sendTextMessage(senderID);
+            break;
+
+        default:
+            self.sendTextMessage(senderID);
+        }
+    } else if (messageAttachments) {
+        self.sendTextMessage(senderID);
+    }
+};
+
+WebHookController.prototype.sendTextMessage = function(senderId){
+    var messageData = {
+        recipient: {
+            id: recipientId
+        },
+        message: {
+            text: "chinchin"
+        }
+    };
+
+    this.callSendAPI(messageData);
+};
+
+WebHookController.prototype.callSendAPI = function(messageData) {
+    request({
+        uri: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: { access_token: PAGE_ACCESS_TOKEN },
+        method: 'POST',
+        json: messageData
+
+    }, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var recipientId = body.recipient_id;
+            var messageId = body.message_id;
+
+            console.log("Successfully sent generic message with id %s to recipient %s", 
+            messageId, recipientId);
+        } else {
+            console.error("Unable to send message.");
+            console.error(response);
+            console.error(error);
+        }
+    });  
 }
+
 
 module["exports"] = WebHookController;
