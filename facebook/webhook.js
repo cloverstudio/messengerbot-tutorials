@@ -8,7 +8,10 @@ WebHookController.prototype.init = function(app){
 
     router.get('/webhook',(req,res) => {
 
-        res.send('OK')
+        res.json({
+            value:"148343125", 
+            received:"OK"
+        });
 
     });
 
