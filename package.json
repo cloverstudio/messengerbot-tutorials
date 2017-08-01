@@ -1,0 +1,22 @@
+{
+  "name": "messengerbot-tutorials.git",
+  "version": "1.0.0",
+  "description": "Just a tutorials",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloverstudio/messengerbot-tutorials.git"
+  },
+  "author": "Ken Yasue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloverstudio/messengerbot-tutorials/issues"
+  },
+  "homepage": "https://github.com/cloverstudio/messengerbot-tutorials#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
