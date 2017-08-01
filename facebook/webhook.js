@@ -8,7 +8,7 @@ var WebHookController = function(){
 
 WebHookController.prototype.init = function(app){
 
-    app.get('/webhook', function(req, res) {
+    router.get('/webhook', function(req, res) {
         if (req.query['hub.mode'] === 'subscribe' &&
             req.query['hub.verify_token'] === init.facebookVerifyToken) {
             console.log("Validating webhook");
