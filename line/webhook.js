@@ -1,6 +1,7 @@
 var express = require('express');
 var request = require('request');
 var router = express.Router();
+const crypto = require('crypto');
 
 var init = require('../init.js');
 
@@ -22,9 +23,16 @@ WebHookController.prototype.init = function(app){
         console.log("received line webhook",JSON.stringify(data, null, 3));
         console.log("headers",JSON.stringify(req.headers, null, 3));
 
-        var signature = req.headers['X-Line-Signature'];
+        var signatureOrig = req.headers['x-line-signature'];
+        
+        // validate signature
+        const channelSecret = init.lineChannelSecret;
 
-        console.log(signature);
+        const body = req.body; // Request body string
+        const signatureGenerated = createHmac('SHA256', channelSecret).update(body).digest('base64');
+        // Compare X-Line-Signature request header and the signature
+
+        console.log(signatureOrig,signatureGenerated);
 
         res.send('OK');
 

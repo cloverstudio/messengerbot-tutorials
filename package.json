@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/cloverstudio/messengerbot-tutorials#readme",
   "dependencies": {
+    "@line/bot-sdk": "^2.0.0",
     "body-parser": "^1.17.2",
+    "crypto": "0.0.3",
     "express": "^4.15.3",
     "request": "^2.81.0"
   }
