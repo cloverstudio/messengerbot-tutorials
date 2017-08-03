@@ -30,6 +30,8 @@ WebHookController.prototype.init = function(app){
             return;
         }
 
+        res.send("OK");
+
     });
 
     router.post('/webhook',(req,res) => {
