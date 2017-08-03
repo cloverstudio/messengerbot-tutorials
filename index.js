@@ -6,8 +6,10 @@ const app = express();
 app.use(bodyParser.json());
 
 const FacebookWebHookController = require('./facebook/webhook');
+const LineWebHookController = require('./line/webhook');
 
 router.use("/facebook", new FacebookWebHookController().init());
+router.use("/line", new LineWebHookController().init());
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
