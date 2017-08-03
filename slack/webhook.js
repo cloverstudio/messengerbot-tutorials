@@ -23,7 +23,18 @@ WebHookController.prototype.init = function(app){
         const data = req.body;
 
         console.log("received line webhook",JSON.stringify(data, null, 3));
-        console.log("headers",JSON.stringify(req.headers, null, 3));        
+        console.log("headers",JSON.stringify(req.headers, null, 3));  
+        
+        // get challenge
+        const reqType = data.type;
+        const challenge = data.challenge;
+
+        if(reqType == 'url_verification'){
+            res.send(challenge);
+            return;
+        }
+
+        res.send("OK");
 
     });
 
