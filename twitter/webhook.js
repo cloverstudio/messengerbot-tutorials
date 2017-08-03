@@ -24,7 +24,7 @@ WebHookController.prototype.init = function(app){
             var hmac = crypto.createHmac('sha256', init.twitterConsumerSecret).update(crcToken).digest('base64');
 
             res.send({
-                response_token: 'sha256=' + hash
+                response_token: 'sha256=' + hmac
             })
 
             return;
