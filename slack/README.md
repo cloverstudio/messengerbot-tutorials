@@ -2,4 +2,4 @@
 
 **Official tutorial is [here](https://api.slack.com/apps)**
 
-- Register as normal user
+Making slack bot is so intuitive, well documented. Just follow official document.

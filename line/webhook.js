@@ -64,7 +64,7 @@ WebHookController.prototype.replyToMessage = function(replyToken){
 
     const message = {
         type: 'text',
-        text: 'ちんちん'
+        text: 'ともだちんこ'
     };
 
     client.replyMessage(replyToken, message)

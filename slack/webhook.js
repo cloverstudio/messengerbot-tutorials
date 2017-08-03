@@ -1,8 +1,6 @@
 const express = require('express');
 const request = require('request');
 const router = express.Router();
-const crypto = require('crypto');
-const line = require('@line/bot-sdk');
 
 const init = require('../init.js');
 
