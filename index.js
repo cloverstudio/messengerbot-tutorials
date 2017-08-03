@@ -25,9 +25,11 @@ app.use(function(req, res, next) {
 
 const FacebookWebHookController = require('./facebook/webhook');
 const LineWebHookController = require('./line/webhook');
+const SlackWebHookController = require('./slack/webhook');
 
 router.use("/facebook", new FacebookWebHookController().init());
 router.use("/line", new LineWebHookController().init());
+router.use("/slack", new SlackWebHookController().init());
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
