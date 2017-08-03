@@ -26,7 +26,8 @@ WebHookController.prototype.init = function(app){
 
         var data = req.body;
 
-        console.log("receive post",JSON.stringify(data, null, 3));
+        console.log("received facebook webhook",JSON.stringify(data, null, 3));
+        console.log("headers",JSON.stringify(req.headers, null, 3));  
 
         // Make sure this is a page subscription
         if (data.object === 'page') {

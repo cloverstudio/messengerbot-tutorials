@@ -22,7 +22,7 @@ WebHookController.prototype.init = function(app){
         const self = this;
         const data = req.body;
 
-        console.log("received line webhook",JSON.stringify(data, null, 3));
+        console.log("received slack webhook",JSON.stringify(data, null, 3));
         console.log("headers",JSON.stringify(req.headers, null, 3));  
         
         // get challenge
@@ -32,6 +32,17 @@ WebHookController.prototype.init = function(app){
         if(reqType == 'url_verification'){
             res.send(challenge);
             return;
+        } else if(reqType == 'event_callback'){
+
+            var eventObj = data.event;
+
+            if(eventObj.type == "message"){
+
+
+                self.replyToMessage(eventObj);
+
+            }
+
         }
 
         res.send("OK");
@@ -42,27 +53,30 @@ WebHookController.prototype.init = function(app){
 
 };
 
-WebHookController.prototype.replyToMessage = function(replyToken){
+WebHookController.prototype.replyToMessage = function(messageObj){
 
-    const client = new line.Client({
-        channelAccessToken: init.lineChannelAccessToken
-    });
-
-    const message = {
-        type: 'text',
+    var message = {
         text: 'ちんちん'
-    };
+    }
 
-    client.replyMessage(replyToken, message)
+    request({
+        uri: init.slackIncomingWebHookURL,
+        method: 'POST',
+        json: message
 
-        .then(() => {
-            console.log('success to send message');
-        })
-        .catch((err) => {
-            console.log('failed to reply message',err)
-        });
+    }, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+
+            console.log('message sent',body);
             
-    };
+        } else {
+            console.error("Unable to send message.");
+            console.error(response);
+            console.error(error);
+        }
+    });  
+
+};
 
 
 module["exports"] = WebHookController;
