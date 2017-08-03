@@ -35,9 +35,10 @@ WebHookController.prototype.init = function(app){
         } else if(reqType == 'event_callback'){
 
             var eventObj = data.event;
+            var eventType = eventObj.type;
+            var eventSubType = eventObj.subtype;
 
-            if(eventObj.type == "message"){
-
+            if(eventObj.type == "message" && eventSubType === undefined){
 
                 self.replyToMessage(eventObj);
 
@@ -68,7 +69,7 @@ WebHookController.prototype.replyToMessage = function(messageObj){
         if (!error && response.statusCode == 200) {
 
             console.log('message sent',body);
-            
+
         } else {
             console.error("Unable to send message.");
             console.error(response);
