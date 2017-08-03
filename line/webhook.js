@@ -21,6 +21,10 @@ WebHookController.prototype.init = function(app){
 
         console.log("received line webhook",JSON.stringify(data, null, 3));
 
+        var signature = req.headers['X-Line-Signature'];
+
+        console.log(sugnature);
+        
         res.send('OK');
 
     });
