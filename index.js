@@ -27,11 +27,13 @@ const FacebookWebHookController = require('./facebook/webhook');
 const LineWebHookController = require('./line/webhook');
 const SlackWebHookController = require('./slack/webhook');
 const WechatWebHookController = require('./wechat/webhook');
+const TwitterWebHookController = require('./twitter/webhook');
 
 router.use("/facebook", new FacebookWebHookController().init());
 router.use("/line", new LineWebHookController().init());
 router.use("/slack", new SlackWebHookController().init());
 router.use("/wechat", new WechatWebHookController().init());
+router.use("/twitter", new TwitterWebHookController().init());
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
