@@ -6,5 +6,7 @@ module["exports"] = {
     lineChannelSecret: 'd697bfa60566be26e6f4c792ce76fab3',
     lineChannelAccessToken: 'z6kbJicKal2uZIVhrC8eyx6w9Ka31ZQaJ8AkPKOcxB/shJizvOs3anjdP+/5hYWImOUkoZDhN7l3rr79BjAhrUvyiwyHaG9hKS7IS6Oe/hoBMfW/TxBtS3c8jn9uB7lQs4UAxBTMfZ6DSr067W0aQQdB04t89/1O/w1cDnyilFU=',
 
-    slackIncomingWebHookURL: 'https://hooks.slack.com/services/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'
+    slackIncomingWebHookURL: 'https://hooks.slack.com/services/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',
+
+    twitterConsumerSecret: 'BCVk1ucpTZhMeETNKuolm7CwrdHGXVfyA2A7dy64rM0siUns9G',
 };
