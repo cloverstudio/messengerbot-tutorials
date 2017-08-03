@@ -4,5 +4,5 @@ module["exports"] = {
     facebookPageUrl: 'https://www.facebook.com/Chinchinbot-467235220326781/',
 
     lineChannelSecret: 'd697bfa60566be26e6f4c792ce76fab3',
-    lineChannelAccessToken: 'MK4RWYk5mS28d81SnjlxLWvgJP2py4iEVEHdIUMk4PF7zw174qiN2DBsFtiESZxrmTI4c6P1LmXFkxF3MdRChu+XhCtbrT3mZEA7CvAAmWX8QeA4i6y+LXFUOOkT9lfNXabQYAi/H/l9YELyvPDcwQdB04t89/1O/w1cDnyilFU='
+    lineChannelAccessToken: 'z6kbJicKal2uZIVhrC8eyx6w9Ka31ZQaJ8AkPKOcxB/shJizvOs3anjdP+/5hYWImOUkoZDhN7l3rr79BjAhrUvyiwyHaG9hKS7IS6Oe/hoBMfW/TxBtS3c8jn9uB7lQs4UAxBTMfZ6DSr067W0aQQdB04t89/1O/w1cDnyilFU='
 };
