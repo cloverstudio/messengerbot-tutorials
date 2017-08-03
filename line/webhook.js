@@ -59,7 +59,7 @@ WebHookController.prototype.init = function(app){
 WebHookController.prototype.replyToMessage = function(replyToken){
 
     const client = new line.Client({
-        channelAccessToken: init.lineChannelSecret
+        channelAccessToken: init.lineChannelAccessToken
     });
 
     const message = {

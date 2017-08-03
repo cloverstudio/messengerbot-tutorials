@@ -14,7 +14,7 @@
 - Just follow this [here](https://devdocs.line.me/en/)
 
     -   I have spent like 30min to find where to setup webhook url. So I write here to avoid wasting time.
-        - Open [https://business.line.me/en/](https://business.line.me/ja/)
+        - Open [https://business.line.me/en/](https://business.line.me/en/)
         - Select Accounts ( Btw, You can create new bot here )
         - Click "Line Developers"
         - Here you can setup webhook URL
