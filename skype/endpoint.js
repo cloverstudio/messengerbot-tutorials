@@ -59,8 +59,7 @@ SkypeendpointController.prototype.init = function(app){
             session.send(`Sorry I don't understand you...`);
         }
     });
-    
-    console.log(connector);
+
     return connector.listen();
     
 };
