@@ -10,6 +10,7 @@ var rawBodySaver = function (req, res, buf, encoding) {
   }
 }
 
+
 /*
 app.use(bodyParser.json({ verify: rawBodySaver }));
 app.use(bodyParser.urlencoded({ verify: rawBodySaver, extended: true }));
@@ -24,8 +25,6 @@ app.use(function(req, res, next) {
   });
   next();
 });
-*/
-
 
 const FacebookWebHookController = require('./facebook/webhook');
 const LineWebHookController = require('./line/webhook');
@@ -41,6 +40,8 @@ router.use("/wechat", new WechatWebHookController().init());
 router.use("/twitter", new TwitterWebHookController().init());
 
 app.use('', router);
+
+*/
 
 app.post('/skype',new SkypeController().init());
 app.get('/', function (req, res) {
