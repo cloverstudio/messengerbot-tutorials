@@ -11,5 +11,8 @@ module["exports"] = {
     twitterConsumerSecret: 'BCVk1ucpTZhMeETNKuolm7CwrdHGXVfyA2A7dy64rM0siUns9G',
     twitterConsumerKey: '3pFZYKfjY8z2ugG6A7otNf24P',
     twitterToken: '7907602-QiuqP0am5DPv3osf7LWRQWA7Y4XF5Hjq7Zpqck4Njd',
-    twitterTokenSecret: 'hLSEjeF7QPKFfYbaWwp0NLAP404hh9EklVzZNZ262UC9u'
+    twitterTokenSecret: 'hLSEjeF7QPKFfYbaWwp0NLAP404hh9EklVzZNZ262UC9u',
+
+    skypeAppId: 'ea28273f-0155-4771-9e9d-ffada7881b54',
+    skypeAppPassword: '8oWLzgYwnOt3OvBdQkrdkA6'
 };

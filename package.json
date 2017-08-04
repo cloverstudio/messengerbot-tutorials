@@ -19,6 +19,7 @@
   "dependencies": {
     "@line/bot-sdk": "^2.0.0",
     "body-parser": "^1.17.2",
+    "botbuilder": "^3.9.0",
     "crypto": "0.0.3",
     "express": "^4.15.3",
     "request": "^2.81.0"
