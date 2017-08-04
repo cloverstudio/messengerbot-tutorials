@@ -39,6 +39,10 @@ SkypeendpointController.prototype.init = function(app){
         console.log('deleteUserData',message);
     });
 
+    bot.on('conversationUpdate', function (message) {
+        console.log('conversationUpdate',message);
+    });
+
     //=========================================================
     // Bots Dialogs
     //=========================================================
@@ -55,7 +59,8 @@ SkypeendpointController.prototype.init = function(app){
             session.send(`Sorry I don't understand you...`);
         }
     });
-        
+    
+    console.log(connector);
     return connector.listen();
     
 };
