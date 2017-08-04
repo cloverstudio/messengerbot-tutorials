@@ -14,9 +14,11 @@ SkypeendpointController.prototype.init = function(app){
 
     var bot = new builder.UniversalBot(connector);
 
-
     //Bot on
     bot.on('contactRelationUpdate', function (message) {
+
+        console.log('contactRelationUpdate',message);
+
         if (message.action === 'add') {
             var name = message.user ? message.user.name : null;
             var reply = new builder.Message()

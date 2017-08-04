@@ -36,13 +36,14 @@ router.use("/slack", new SlackWebHookController().init());
 router.use("/wechat", new WechatWebHookController().init());
 router.use("/twitter", new TwitterWebHookController().init());
 
-app.post('/skype',new SkypeController().init());
+app.use('', router);
 
+app.post('/skype',new SkypeController().init());
 app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
-app.use('', router);
+
 
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!')
