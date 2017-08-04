@@ -51,13 +51,7 @@ SkypeendpointController.prototype.init = function(app){
     }
 
     bot.dialog('/', function (session) {
-        if(session.message.text.toLowerCase().contains('hello')){
-            session.send(`Hey, How are you?`);
-        }else if(session.message.text.toLowerCase().contains('help')){
-            session.send(`How can I help you?`);
-        }else{
-            session.send(`Sorry I don't understand you...`);
-        }
+        session.send("ともだちんこ");
     });
 
     return connector.listen();
