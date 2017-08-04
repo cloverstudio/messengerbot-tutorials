@@ -31,7 +31,6 @@ const SlackWebHookController = require('./slack/webhook');
 const WechatWebHookController = require('./wechat/webhook');
 const TwitterWebHookController = require('./twitter/webhook');
 const SkypeController = require('./skype/endpoint');
-const SkypeController2 = require('./skype/endpoint2');
 
 router.use("/facebook", new FacebookWebHookController().init());
 router.use("/line", new LineWebHookController().init());
@@ -42,7 +41,6 @@ router.use("/twitter", new TwitterWebHookController().init());
 app.use('', router);
 
 app.post('/skype',new SkypeController().init());
-app.post('/skype2',new SkypeController2().init());
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
