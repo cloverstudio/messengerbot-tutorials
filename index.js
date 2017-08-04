@@ -9,6 +9,8 @@ var rawBodySaver = function (req, res, buf, encoding) {
     req.rawBody = buf.toString(encoding || 'utf8');
   }
 }
+
+/*
 app.use(bodyParser.json({ verify: rawBodySaver }));
 app.use(bodyParser.urlencoded({ verify: rawBodySaver, extended: true }));
 app.use(bodyParser.raw({ verify: rawBodySaver, type: function () { return true } }));
@@ -22,6 +24,8 @@ app.use(function(req, res, next) {
   });
   next();
 });
+*/
+
 
 const FacebookWebHookController = require('./facebook/webhook');
 const LineWebHookController = require('./line/webhook');
