@@ -11,5 +11,6 @@ Everything is (here)[https://core.telegram.org/bots/api]
     - Change this script and run $ node ./telegram/console/setupWebhook.js [token] [url] 
     - If it returns "{"ok":true,"result":true,"description":"Webhook was set"}" it succeeed.
 
-
+- If you didn't receive webhook try call getWebhookInfo API to get errors. 
+    - You can do this with this command $ node ./telegram/console/getWebhookInfo.js [token]
 

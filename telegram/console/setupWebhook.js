@@ -1,5 +1,5 @@
 // console app to setup webhook url
-// use $ node ./telegram/console/setupWebhook.js [url] 
+// use $ node ./telegram/console/setupWebhook.js [token] [url] 
 // it doesn't work if you are using self-certificaeted certificate
 // in the case plase do the post manually.
 // https://core.telegram.org/bots/api#setwebhook
