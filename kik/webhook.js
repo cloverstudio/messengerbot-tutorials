@@ -23,9 +23,9 @@ WebHookController.prototype.init = function(app){
         console.log("received slack webhook",JSON.stringify(data, null, 3));
         console.log("headers",JSON.stringify(req.headers, null, 3));  
 
-        if(messages.length && messages.length > 0 && messages.length[0].chatId && messages.length[0].from){
+        if(data.messages.length && data.messages.length > 0 && data.messages.length[0].chatId && data.messages.length[0].from){
 
-            self.replyToMessage(messages.length[0].from,messages.length[0].chatId);
+            self.replyToMessage(data.messages.length[0].from,data.messages.length[0].chatId);
 
         }
 
