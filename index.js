@@ -31,7 +31,7 @@ const SlackWebHookController = require('./slack/webhook');
 const WechatWebHookController = require('./wechat/webhook');
 const TwitterWebHookController = require('./twitter/webhook');
 const SkypeController = require('./skype/endpoint');
-const TelegramController = require('./telegram/endpoint');
+const TelegramController = require('./telegram/webhook');
 
 router.use("/facebook", new FacebookWebHookController().init());
 router.use("/line", new LineWebHookController().init());
