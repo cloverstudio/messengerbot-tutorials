@@ -31,12 +31,14 @@ const SlackWebHookController = require('./slack/webhook');
 const WechatWebHookController = require('./wechat/webhook');
 const TwitterWebHookController = require('./twitter/webhook');
 const SkypeController = require('./skype/endpoint');
+const TelegramController = require('./telegram/endpoint');
 
 router.use("/facebook", new FacebookWebHookController().init());
 router.use("/line", new LineWebHookController().init());
 router.use("/slack", new SlackWebHookController().init());
 router.use("/wechat", new WechatWebHookController().init());
 router.use("/twitter", new TwitterWebHookController().init());
+router.use("/telegram", new TelegramController().init());
 
 app.use('', router);
 
