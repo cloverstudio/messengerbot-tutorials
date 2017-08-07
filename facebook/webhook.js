@@ -109,7 +109,7 @@ WebHookController.prototype.sendTextMessage = function(recipientId){
             id: recipientId
         },
         message: {
-            text: "chinchin"
+            text: "ともだちんこ"
         }
     };
 
