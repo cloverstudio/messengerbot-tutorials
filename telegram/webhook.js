@@ -53,6 +53,10 @@ WebHookController.prototype.replyToMessage = function(chatId){
 
     // POST request to create webhook config
     request.post(request_options, function (error, response, body) {
+
+        if(error)
+            console.log(error);
+        
         console.log(body)
     })
 
