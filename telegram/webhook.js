@@ -41,7 +41,7 @@ WebHookController.prototype.replyToMessage = function(chatId){
 
     const url = 'https://api.telegram.org/bot' + init.telegramBotToken + '/sendMessage';
     const request_options = {
-        url: "",
+        url: url,
         headers: {
             'Content-type': 'application/x-www-form-urlencoded'
         },
@@ -56,7 +56,7 @@ WebHookController.prototype.replyToMessage = function(chatId){
 
         if(error)
             console.log(error);
-        
+
         console.log(body)
     })
 
