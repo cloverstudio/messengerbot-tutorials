@@ -14,5 +14,7 @@ module["exports"] = {
     twitterTokenSecret: 'hLSEjeF7QPKFfYbaWwp0NLAP404hh9EklVzZNZ262UC9u',
 
     skypeAppId: 'ea28273f-0155-4771-9e9d-ffada7881b54',
-    skypeAppPassword: '8oWLzgYwnOt3OvBdQkrdkA6'
+    skypeAppPassword: '8oWLzgYwnOt3OvBdQkrdkA6',
+
+    telegramBotToken: '330414757:AAGExf_5UpQ4zdTeYJs4NdaqcKnJMh9wnJ0'
 };

@@ -23,6 +23,12 @@ WebHookController.prototype.init = function(app){
         console.log("received slack webhook",JSON.stringify(data, null, 3));
         console.log("headers",JSON.stringify(req.headers, null, 3));  
 
+        if(data.message && data.message.chat && data.message.chat.id){
+
+            self.replyToMessage(data.message.chat.id);
+
+        }
+
         res.send("OK");
 
     });
@@ -31,7 +37,24 @@ WebHookController.prototype.init = function(app){
 
 };
 
-WebHookController.prototype.replyToMessage = function(messageObj){
+WebHookController.prototype.replyToMessage = function(chatId){
+
+    const url = 'https://api.telegram.org/bot' + init.telegramBotToken + '/sendMessage';
+    const request_options = {
+        url: "",
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+        },
+        formData: {
+            chat_id: chatId,
+            text: "ともだちんこ"
+        }
+    }
+
+    // POST request to create webhook config
+    request.post(request_options, function (error, response, body) {
+        console.log(body)
+    })
 
 };
 
