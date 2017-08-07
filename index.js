@@ -32,6 +32,7 @@ const WechatWebHookController = require('./wechat/webhook');
 const TwitterWebHookController = require('./twitter/webhook');
 const SkypeController = require('./skype/endpoint');
 const TelegramController = require('./telegram/webhook');
+const KikController = require('./kik/webhook');
 
 router.use("/facebook", new FacebookWebHookController().init());
 router.use("/line", new LineWebHookController().init());
@@ -39,6 +40,7 @@ router.use("/slack", new SlackWebHookController().init());
 router.use("/wechat", new WechatWebHookController().init());
 router.use("/twitter", new TwitterWebHookController().init());
 router.use("/telegram", new TelegramController().init());
+router.use("/kik", new KikController().init());
 
 app.use('', router);
 

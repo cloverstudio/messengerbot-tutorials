@@ -16,5 +16,8 @@ module["exports"] = {
     skypeAppId: 'ea28273f-0155-4771-9e9d-ffada7881b54',
     skypeAppPassword: '8oWLzgYwnOt3OvBdQkrdkA6',
 
-    telegramBotToken: '330414757:AAGExf_5UpQ4zdTeYJs4NdaqcKnJMh9wnJ0'
+    telegramBotToken: '330414757:AAGExf_5UpQ4zdTeYJs4NdaqcKnJMh9wnJ0',
+
+    kilUserName: 'Tomodachibot',
+    kikAPIKey: 'fc4b3474-7405-4b11-b276-720c50012c54'
 };
