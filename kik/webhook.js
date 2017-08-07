@@ -25,7 +25,7 @@ WebHookController.prototype.init = function(app){
 
         if(data.messages.length && data.messages.length > 0 && data.messages[0].chatId && data.messages[0].from){
 
-            self.replyToMessage(data.messages.length[0].from,data.messages.length[0].chatId);
+            self.replyToMessage(data.messages[0].from,data.messages[0].chatId);
 
         }
 
