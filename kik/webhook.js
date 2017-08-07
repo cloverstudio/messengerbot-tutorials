@@ -23,6 +23,11 @@ WebHookController.prototype.init = function(app){
         console.log("received slack webhook",JSON.stringify(data, null, 3));
         console.log("headers",JSON.stringify(req.headers, null, 3));  
 
+        if(messages.length && messages.length > 0 && messages.length[0].chatId && messages.length[0].from){
+
+            self.replyToMessage(messages.length[0].from,messages.length[0].chatId);
+
+        }
 
         res.send("OK");
 
@@ -32,7 +37,35 @@ WebHookController.prototype.init = function(app){
 
 };
 
-WebHookController.prototype.replyToMessage = function(chatId){
+WebHookController.prototype.replyToMessage = function(to,chatId){
+
+    var request_options = {
+        url: "https://api.kik.com/v1/message",
+        auth: {
+            user: init.kilUserName,
+            pass: init.kikAPIKey
+        },
+        json: {
+            "messages": [
+                {
+                    "body": "ともだちんこ", 
+                    "to": to, 
+                    "type": "text", 
+                    "chatId": chatId
+                }
+            ]
+        }
+    };
+
+    // POST request to create webhook config
+    request.post(request_options, function (error, response, body) {
+
+        if(error)
+            console.log(error);
+
+        console.log(body)
+
+    })
 
 };
 
